@@ -1,0 +1,21 @@
+docker compose up
+
+docker-compose up --build mysql
+
+docker exec -it memblog_mysql_1 mysql -u user -puser
+
+
+
+
+create table User (id INT PRIMARY KEY AUTO_INCREMENT, login VARCHAR(20), password VARCHAR(20))
+create table CategoryPost (idCategory INT PRIMARY KEY AUTO_INCREMENT, name create table User (id INT PRIMARY KEY AUTO_INCREMENT, login VARCHAR(20), password VARCHAR(20))VARCHAR(100) NOT NULL , description VARCHAR(255));
+create table Post (idPost INT PRIMARY KEY AUTO_INCREMENT NOT NULL , name VARCAR(100) NOT NULL , description VARCHAR(255), dateCreate DATETIME NOT NULL);
+
+ALTER TABLE Post ADD COLUMN idCategory INT NOT NULL;
+ALTER TABLE Post ADD FOREIGN KEY (idCategory) REFERENCES CategoryPost (idCategory);
+show databases;
+use jeka
+show tables;
+SHOW COLUMNS FROM
+CREATE DATABASE
+DROP DATABASE  
