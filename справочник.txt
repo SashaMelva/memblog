@@ -4,7 +4,7 @@ docker-compose up --build mysql
 
 docker exec -it memblog_mysql_1 mysql -u user -puser
 
-
+http://localhost:8080/views/authoriz_user.php
 
 
 create table User (id INT PRIMARY KEY AUTO_INCREMENT, login VARCHAR(20), password VARCHAR(20))

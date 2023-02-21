@@ -1,12 +1,3 @@
-<?php
-session_start();
-if ($_SESSION['user']) {
-    header('Location: profil.php');
-}
-
-//require_once('include/connection.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en" class="page">
 
@@ -14,9 +5,9 @@ if ($_SESSION['user']) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="src/style/styles.css">
+    <link rel="stylesheet" type="text/css" href="../src/style/styles.css">
 
-    <title>Блог</title>
+    <title>Новый пост</title>
 </head>
 
 <body class="grid-main-content">
@@ -24,18 +15,19 @@ if ($_SESSION['user']) {
     <header class="content-header">
         <div class="conteiner conteiner-header">
             <div>
-                <img class="img-logo" src="src/img/blogging.png" alt="Логотип">
+                <img class="img-logo" src="../src/img/blogging.png" alt="Логотип">
             </div>
             <nav class="nav navigation-header">
                 <ul class="navigation-core">
-                    <li><a id="authorization" class="a-header" href="#">Авторизация</a></li>
+                    <li><a id="profil" class="a-header" href="#">Профиль</a></li>
+                    <li><a id="new-post" class="a-header" href="#">Новый пост</a></li>
                     <li><a id="main" class="a-header" href="#">Главная</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="main-content" id="app"></main>
+    <main class="main-content" id="app-auth-user"></main>
 
     <footer class="content-footer">
         <div class="conteiner container-footer">
@@ -48,26 +40,26 @@ if ($_SESSION['user']) {
 
             <div>
                 <p>Данный проект реализован не для продажи</p>
-                <p>Ссылка на GitHub разработчика: </p>
+                <p>Ссылка на GitHub репозитоий: </p>
             </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="router/routering.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../router/forAuthUser/routering.js"></script>
     <script>
         let navbar = document.querySelector(".nav");
         navbar.addEventListener("click", setActionValue);
 
-        function registration() {
+        /*function registration() {
             let btn = document.querySelector("#registration");
             btn.addEventListener("click", setActionValue);
-        }
+        }*/
         defaultPage();
         
+
+       // let navbar = document.querySelector(".nav");
+
+       
     </script>
-   
 </body>
-
 </html>
-
-

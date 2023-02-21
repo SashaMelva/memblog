@@ -266,7 +266,27 @@ li {
 }
 
 /*POSTS*/
-
+.header-main-conteiner {
+    margin: 40px auto;
+}
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+.input-search-post {
+    width: 20em;
+    margin-left: 10px;
+}
+.category-post  {
+    width: 20em;
+    margin: 10px 20px 20px 0px;
+}
+.btn-burger {
+    background-color: transparent;
+    border: solid 0px;
+    width: 3em;
+}
 .post-content {
     width: auto;
     height: auto;
@@ -291,4 +311,32 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+/*ADD POST*/
+.display-add-post {
+    width: 810px;
+}
+
+.input-for-add-post {
+    width: 98%;
+}
+.area {
+    resize: none;
+}
+
+
+/*PROFIL*/
+.display-profil {
+    width: 800px;
+}
+
+.display-profil {
+    background-color: var(--primary-light);
+    color: var(--basic-dark);
+}
+
+.btn-profil {
+    margin: 10px 20px 10px 20px;
+    width: 95%;
 }

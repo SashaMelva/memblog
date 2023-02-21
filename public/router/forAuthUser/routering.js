@@ -1,29 +1,30 @@
 
-let content = document.querySelector("#app");
+let content = document.querySelector("#app-auth-user");
 let action = "";
 
 async function defaultPage() {
-    return await createRequest("../views/main.php");
+    action = "main"
+    return await createRequest("../../views/main.php");
 }
 
 async function setActionValue(event) {
     event.preventDefault();
 
     switch (event.target.id) {
-        case "authorization":
+        case "profil":
             action = event.target.id;
-            document.title = "Авторизация";
-            await createRequest("../views/authorization.php");
+            document.title = "Профиль";
+            await createRequest("../../views/profil.php");
+            break;
+        case "new-post":
+            action = event.target.id;
+            document.title = "Новый пост";
+            await createRequest("../../views/new_post.php");
             break;
         case "main":
             action = event.target.id;
-            document.title = "Блог";
-            await createRequest("../views/main.php");
-            break;
-        case "registration":
-            action = event.target.id;
-            document.title = "Регистрация";
-            await createRequest("../views/registration.php");
+            document.title = "Главная";
+            await createRequest("../../views/main.php");
             break;
 
 
@@ -39,7 +40,7 @@ async function createRequest(url) {
         const request = await fetch(url, {
             method: "POST",
             headers: {
-                "Main-Content": "application/json;charset=utf-8"
+                "Auth-Content": "application/json;charset=utf-8"
             },
 
             body: JSON.stringify({ "action": action })

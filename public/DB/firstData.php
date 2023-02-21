@@ -1,15 +1,21 @@
 <?php
+//echo "Connected successfully";
 
-require_once ("conection.php");
+
+$conn = new mysqli("localhost", "user", "user", "blog_db");
+if(!$conn){
+    echo("Ошибка: " . mysqli_connect_error());
+}
+echo "Connected successfully";
 
 $sqlUserAdd = "INSERT INTO User (login, password) VALUES 
             ('user1', '123'), 
             ('user2', '123'), 
             ('user2', '123')";
-if($conn->query($sqlUserAdd)){
+if(mysqli_query($conn, $sqlUserAdd)){
     echo "Данные о пользователях успешно добавлены";
 } else{
-    echo "Ошибка: " . $conn->error;
+    echo "Ошибка: " . $sql . "<br>" . mysqli_error($conn);
 }
  
 $sqlCategoryAdd = "INSERT INTO User (login, password) VALUES 
@@ -18,10 +24,10 @@ $sqlCategoryAdd = "INSERT INTO User (login, password) VALUES
             ('Спорт', 'Спортивные достижения, новинки'), 
             ('Технологии', 'Новейшее оборудование и достижения в IT индустрии'), 
             ('Красота', 'Советы по уходу, модные новинки'), ";
-if($conn->query($sqlUserAdd)){
+if(mysqli_query($conn, $sqlCategoryAdd)){
     echo "Данные о категориях успешно добавлены";
 } else{
-    echo "Ошибка: " . $conn->error;
+    echo "Ошибка: " . $sql . "<br>" . mysqli_error($conn);
 }
 $sqlPostAdd = "INSERT INTO Post (login, password) VALUES 
             ('«Барса» и «МЮ» устроили шоу уровня Лиги чемпионов. Сочная ничья на «Камп Ноу»', 'Первый матч стыкового раунда Лиги Европы впечатлил — 2:2. Для топ-клубов Лига Европы — это страшилка. Турнир, которого нужно избегать, чтобы болельщики команд-врагов не высмеивали тебя в соцсетях, а ты сам не терял время и силы. С точки зрения грандов призовые во втором по статусу турнире УЕФА ничтожны, а престижа — почти никакого. ', '01.01.2023', 3, 2), 
@@ -33,11 +39,11 @@ $sqlPostAdd = "INSERT INTO Post (login, password) VALUES
 И что же делать? Не наносить? Но нам хочется иметь идеальный ровный тон лица и, заодно, защиту от непогоды и злого ультрафиолета. ', '16.02.2023', 5, 1), 
             ('Йоханнес Бе все ближе к абсолюту на чемпионате мира. Выиграл уже пять гонок из пяти', 'Норвежцу осталось закрыть две «мишени».
 Чемпионат мира-2023 Новый день на чемпионате мира в немецком Оберхофе не принес сюрпризов. Очередную победу одержал Йоханнес Бе. На этот раз в сингл-миксте в паре с Марте Услбю-Ройселанд. Для Бе это пятая золотая медаль в пяти гонках. Ему осталось выиграть еще в двух, тогда ему покорится вечный рекорд. Вся сборная Норвегии готова работать на своего лидера.', '07.01.2023', 3, 3)";
-if($conn->query($sqlUserAdd)){
+if(mysqli_query($conn, $sqlPostAdd)) {
     echo "Данные о постах успешно добавлены";
 } else{
-    echo "Ошибка: " . $conn->error;
+    echo "Ошибка: " . $sql . "<br>" . mysqli_error($conn);
 }
 
 
-$conn->close();
+mysqli_close($conn);
