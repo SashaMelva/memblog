@@ -8,8 +8,8 @@ http://localhost:8080/views/authoriz_user.php
 
 
 create table User (id INT PRIMARY KEY AUTO_INCREMENT, login VARCHAR(20), password VARCHAR(20))
-create table CategoryPost (idCategory INT PRIMARY KEY AUTO_INCREMENT, name create table User (id INT PRIMARY KEY AUTO_INCREMENT, login VARCHAR(20), password VARCHAR(20))VARCHAR(100) NOT NULL , description VARCHAR(255));
-create table Post (idPost INT PRIMARY KEY AUTO_INCREMENT NOT NULL , name VARCAR(100) NOT NULL , description VARCHAR(255), dateCreate DATETIME NOT NULL);
+create table CategoryPost (idCategory INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100), description VARCHAR(255));
+create table Post (idPost INT PRIMARY KEY AUTO_INCREMENT NOT NULL , name VARCHAR(100) NOT NULL , description VARCHAR(255), dateCreate DATETIME NOT NULL);
 
 ALTER TABLE Post ADD COLUMN idCategory INT NOT NULL;
 ALTER TABLE Post ADD FOREIGN KEY (idCategory) REFERENCES CategoryPost (idCategory);
@@ -19,3 +19,21 @@ show tables;
 SHOW COLUMNS FROM
 CREATE DATABASE
 DROP DATABASE  
+
+
+/*Логи и настройка nginx самый лучший и отличный способ*/
+Создаём в корне проекта папку logs
+В файле nginx.conf прописываем пути для сохрения файлов о логировании и ошибок
+
+    access_log /memblog/logs/nginx.access.log;
+    error_log /memblog/logs/nginx.error.log warn;
+
+Пересобираем проект
+Тперь мы можеи просматривать ошибки проекта при его сборке
+
+/*Порты*/
+ mysql:
+        ports:
+            - '8082:3306'
+Порт для LocalHost компьютера 
+Чтобы подключиться из одного контейнера к другому, необходимо вызвать имя контейнера и его внутренний порт 3006

@@ -9,11 +9,31 @@
     --basic-white: #F0E9D2 ;
     --basic-white-white: white;
 }
-
+.div-message {
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--basic-white-white);
+}
 .span-dark-blu {
     color: var(--primary-dark);
 }
-
+.btn-message-code {
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 30px;
+    letter-spacing: 0.15px;
+    font-weight: 500;
+    border: solid 3px var(--primary-dark);
+    border-radius: 5px;
+    color: var(--basic-white-white);
+    background-color:  var(--primary-dark);
+    
+    margin: 10px 0px;
+}
 .page {
     height: 100%;
 }

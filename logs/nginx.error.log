@@ -1,0 +1,34 @@
+2023/02/22 12:49:17 [error] 35#35: *1312 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../include/generatorPost.php): Failed to open stream: No such file or directory in /memblog/public/views/main.php on line 18; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../include/generatorPost.php' (include_path='.:/usr/share/php') in /memblog/public/views/main.php:18
+Stack trace:
+#0 {main}
+  thrown in /memblog/public/views/main.php on line 18" while reading response header from upstream, client: 172.21.0.1, server: , request: "POST /views/main.php HTTP/1.1", upstream: "fastcgi://172.21.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/"
+2023/02/22 12:49:19 [error] 35#35: *1312 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(../include/generatorPost.php): Failed to open stream: No such file or directory in /memblog/public/views/main.php on line 18; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '../include/generatorPost.php' (include_path='.:/usr/share/php') in /memblog/public/views/main.php:18
+Stack trace:
+#0 {main}
+  thrown in /memblog/public/views/main.php on line 18" while reading response header from upstream, client: 172.21.0.1, server: , request: "POST /views/main.php HTTP/1.1", upstream: "fastcgi://172.21.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/"
+2023/02/22 12:50:26 [error] 35#35: *1326 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(connection.php): Failed to open stream: No such file or directory in /memblog/src/generatorPost.php on line 3; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'connection.php' (include_path='.:/usr/share/php') in /memblog/src/generatorPost.php:3
+Stack trace:
+#0 /memblog/public/views/main.php(18): require_once()
+#1 {main}
+  thrown in /memblog/src/generatorPost.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: , request: "POST /views/main.php HTTP/1.1", upstream: "fastcgi://172.21.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/"
+2023/02/22 12:51:24 [error] 35#35: *1326 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined variable $conn in /memblog/src/generatorPost.php on line 4; PHP message: PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /memblog/src/generatorPost.php:4
+Stack trace:
+#0 /memblog/src/generatorPost.php(4): mysqli_query()
+#1 /memblog/public/views/main.php(18): require_once('...')
+#2 {main}
+  thrown in /memblog/src/generatorPost.php on line 4" while reading response header from upstream, client: 172.21.0.1, server: , request: "POST /views/main.php HTTP/1.1", upstream: "fastcgi://172.21.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/"
+2023/02/22 13:00:17 [error] 35#35: *1331 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(connection.php): Failed to open stream: No such file or directory in /memblog/src/generatorPost.php on line 3; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'connection.php' (include_path='.:/usr/share/php') in /memblog/src/generatorPost.php:3
+Stack trace:
+#0 /memblog/public/views/main.php(18): require_once()
+#1 {main}
+  thrown in /memblog/src/generatorPost.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: , request: "POST /views/main.php HTTP/1.1", upstream: "fastcgi://172.21.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/"
+2023/02/22 13:00:27 [error] 35#35: *1331 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(connection.php): Failed to open stream: No such file or directory in /memblog/src/generatorPost.php on line 3; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'connection.php' (include_path='.:/usr/share/php') in /memblog/src/generatorPost.php:3
+Stack trace:
+#0 /memblog/public/views/main.php(18): require_once()
+#1 {main}
+  thrown in /memblog/src/generatorPost.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: , request: "POST /views/main.php HTTP/1.1", upstream: "fastcgi://172.21.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/"
+2023/02/22 13:05:21 [error] 35#35: *1336 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(connection.php): Failed to open stream: No such file or directory in /memblog/src/generatorPost.php on line 3; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required 'connection.php' (include_path='.:/usr/share/php') in /memblog/src/generatorPost.php:3
+Stack trace:
+#0 /memblog/public/views/main.php(18): require_once()
+#1 {main}
+  thrown in /memblog/src/generatorPost.php on line 3" while reading response header from upstream, client: 172.21.0.1, server: , request: "POST /views/main.php HTTP/1.1", upstream: "fastcgi://172.21.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/"

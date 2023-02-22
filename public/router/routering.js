@@ -1,4 +1,3 @@
-
 let content = document.querySelector("#app");
 let action = "";
 
@@ -25,8 +24,6 @@ async function setActionValue(event) {
             document.title = "Регистрация";
             await createRequest("../views/registration.php");
             break;
-
-
     }
 }
 

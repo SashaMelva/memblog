@@ -14,30 +14,33 @@
     </div>
 </section>
 
+<?php
+require_once("../../src/generatorPost.php");
+?>
 <section class="conteiner">
     <?php foreach ($posts as $post) : ?>
     <action>
         <div class="post-content">
             <div class="post-header">
                 <a class="post-a" href="">>
-                    <?= $user->geCategory() ?>Категория
+                    Категория
                 </a>
                 <h2><a href="">
-                        <?= $user->geNamePost() ?>Название поста
+                        <?= $post->name ?>Название поста
                     </a></h2>
             </div>
             <div class="post-main-content">
                 <p>
-                    <?= $user->getDescroptionPost() ?>Описание поста цфщжацкшаожщыукпаоптдыфукжуопщушпофщкаоуктщкфпжу
+                    <?= $post->description  ?>Описание поста цфщжацкшаожщыукпаоптдыфукжуопщушпофщкаоуктщкфпжу
                 </p>
             </div>
             <hr>
             <div class="post-footer">
                 <p>
-                    <?= $user->getDateCreat() ?>12-03-2023
+                    <?= $post->dateCreate  ?>12-03-2023
                 </p>
                 <p>Автор поста: <a href="">
-                        <?= $user->getUserPost() ?>User
+                        <?= $post->idUser?>User
                     </a> </p>
             </div>
         </div>

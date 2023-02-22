@@ -5,7 +5,6 @@ function authorization() {
 
     if(file_exists($path)) {
         return file_get_contents($path);
-
     }
 }
 

@@ -9,8 +9,7 @@
             <legend class="legend-form">Регистрация</legend>
             <button class="btn-form-exit"><img class="img-close" src="../src/img/close.png" alt="Закрыть"></button>
         </div>
-        <form class="content-form" action="../include/signup.php" method="POST"
-            onsubmit="return validateFormRegistration()">
+        <form class="content-form" action="../include/signup.php" method="POST" onsubmit="return validateFormRegistration()">
             <label class="text-input-form label-login">Введите логин</label>
             <input id="login" name="login" type="text" class="input-form" placeholder="login">
             <label class="text-input-form label-password">Введите пароль</label>

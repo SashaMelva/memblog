@@ -125,3 +125,9 @@ function categoryPost() {
     }
     r++;
 }
+
+
+function closeWinMessage() {
+    let win = document.querySelector('.div-message');
+    win.style.display = 'none';
+}

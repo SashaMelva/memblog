@@ -1,12 +1,12 @@
 <?php
+//session_start();
+require_once('../src/conection.php');
+/*require_once('include/signin.php');
 session_start();
 if ($_SESSION['user']) {
     header('Location: profil.php');
-}
-
-//require_once('include/connection.php');
+}*/
 ?>
-
 <!DOCTYPE html>
 <html lang="en" class="page">
 
@@ -20,7 +20,6 @@ if ($_SESSION['user']) {
 </head>
 
 <body class="grid-main-content">
-
     <header class="content-header">
         <div class="conteiner conteiner-header">
             <div>
@@ -34,7 +33,17 @@ if ($_SESSION['user']) {
             </nav>
         </div>
     </header>
+<div class="div-message">
+    <?php
+    
+  //  require_once('include/firstData.php');
+    
+    //require_once('include/signup.php');
 
+    //$_SESSION['message']
+    ?>
+    <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
+</div>
     <main class="main-content" id="app"></main>
 
     <footer class="content-footer">
@@ -50,10 +59,11 @@ if ($_SESSION['user']) {
                 <p>Данный проект реализован не для продажи</p>
                 <p>Ссылка на GitHub разработчика: </p>
             </div>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="router/routering.js"></script>
+    <script src="/router/routering.js"></script>
     <script>
         let navbar = document.querySelector(".nav");
         navbar.addEventListener("click", setActionValue);
