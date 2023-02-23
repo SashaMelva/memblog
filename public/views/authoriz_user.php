@@ -11,7 +11,6 @@
 </head>
 
 <body class="grid-main-content">
-
     <header class="content-header">
         <div class="conteiner conteiner-header">
             <div>
@@ -19,15 +18,78 @@
             </div>
             <nav class="nav navigation-header">
                 <ul class="navigation-core">
-                    <li><a id="profil" class="a-header" href="#">Профиль</a></li>
-                    <li><a id="new-post" class="a-header" href="#">Новый пост</a></li>
-                    <li><a id="main" class="a-header" href="#">Главная</a></li>
+                    <li><a id="profil" class="a-header" href="profil.php">Профиль</a></li>
+                    <li><a id="new-post" class="a-header" href="new_post.php">Новый пост</a></li>
+                    <li><a id="main" class="a-header" href="authoriz_user.php">Главная</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="main-content" id="app-auth-user"></main>
+    <div class="div-message">
+        <?php
+        
+    //  require_once('include/firstData.php');
+        
+        //require_once('include/signup.php');
+
+        //$_SESSION['message']
+        ?>
+        <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
+    </div>
+    <main class="main-content">
+        <section class="conteiner header-main-conteiner">
+            <div class="header-main">
+                <button class="btn-burger" onclick="categoryPost()"><img src="../src/img/burger.png"></button>
+                <div>
+                    <label class="text-input-form">Поиск постов по названию</label>
+                    <input name="search" class="input-form input-search-post" type="test">
+                </div>
+
+            </div>
+            <div class="category-post" style="display:none;">
+                <p>Выберите категории постов</p>
+                <label></label>
+                <input type="checkbox">
+            </div>
+        </section>
+
+        <?php
+       // require_once("../../src/generatorPost.php");
+        ?>
+        <section class="conteiner">
+            <?php foreach ($posts as $post) : ?>
+                <action>
+                    <div class="post-content">
+                        <div class="post-header">
+                            <a class="post-a" href="">> Категория</a>
+                            <h2>
+                                <a href="">
+                                    <?= $post->name ?>Название поста
+                                </a>
+                            </h2>
+                        </div>
+                        <div class="post-main-content">
+                            <p>
+                                <?= $post->description  ?>Описание поста цфщжацкшаожщыукпаоптдыфукжуопщушпофщкаоуктщкфпжу
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="post-footer">
+                            <p>
+                                <?= $post->dateCreate  ?>12-03-2023
+                            </p>
+                            <p>Автор поста: 
+                                <a href="">
+                                    <?= $post->idUser?>User
+                                </a> 
+                            </p>
+                        </div>
+                    </div>
+                </action>
+            <?php endforeach; ?>
+        </section>
+    </main>
 
     <footer class="content-footer">
         <div class="conteiner container-footer">
@@ -42,24 +104,18 @@
                 <p>Данный проект реализован не для продажи</p>
                 <p>Ссылка на GitHub репозитоий: </p>
             </div>
+        </div>
     </footer>
-
     <script src="../js/main.js"></script>
-    <script src="../router/forAuthUser/routering.js"></script>
     <script>
-        let navbar = document.querySelector(".nav");
-        navbar.addEventListener("click", setActionValue);
 
         /*function registration() {
             let btn = document.querySelector("#registration");
             btn.addEventListener("click", setActionValue);
         }*/
-        defaultPage();
         
 
        // let navbar = document.querySelector(".nav");
-
-       
     </script>
 </body>
 </html>

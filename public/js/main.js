@@ -114,8 +114,9 @@ function actualProfil() {
 }
 
 
-let r = 1;
+        let r = 0;
 function categoryPost() {
+    alert();
     let formCategory = document.querySelector(".category-post");
     if (r % 2 == 0) {
         formCategory.style.display = 'none';
