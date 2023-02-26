@@ -1,7 +1,6 @@
 <?php
 session_start();
-require_once('connection.php');
-
+require_once('../../src/conection.php');
 
 $login = trim($_POST['login']);
 $password = $_POST['password'];
@@ -20,10 +19,10 @@ if (mysqli_num_rows($chekUser) == 1) {
         header('Location: http://localhost:8080/views/authoriz_user.php');
     } else {
         $_SESSION['message'] = 'Вы ввели неверны пароль';
-        header('Location: /');
+        header('Location: http://localhost:8080/views/authorization.php');
     }
 } else {
     $_SESSION['message'] = 'Пользователя с таким логином не существует';
-    header('Location: /');
+    header('Location: http://localhost:8080/views/authorization.php');
 }
 mysqli_close($conn);

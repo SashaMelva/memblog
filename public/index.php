@@ -1,11 +1,12 @@
 <?php
 //session_start();
-require_once('../src/conection.php');
+//require_once('../src/conection.php');
 /*require_once('include/signin.php');
 session_start();
 if ($_SESSION['user']) {
     header('Location: profil.php');
 }*/
+require_once("../src/generatorContent.php");
 ?>
 <!DOCTYPE html>
 <html lang="en" class="page">
@@ -33,17 +34,17 @@ if ($_SESSION['user']) {
             </nav>
         </div>
     </header>
-    <div class="div-message">
+   <!-- <div class="div-message">
         <?php
         
-    //  require_once('include/firstData.php');
+        //require_once('../src/firstData.php');
         
         //require_once('include/signup.php');
 
         //$_SESSION['message']
         ?>
         <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
-    </div>
+    </div>-->
     <main class="main-content">
         <section class="conteiner header-main-conteiner">
             <div class="header-main">
@@ -56,38 +57,42 @@ if ($_SESSION['user']) {
             </div>
             <div class="category-post" style="display:none;">
                 <p>Выберите категории постов</p>
-                <label></label>
-                <input type="checkbox">
+                <?php foreach ($categories as $category) : ?>
+                   <div>
+                        <input type="checkbox">
+                        <label>
+                            <?= $category["name"]?>
+                        </label>
+                    </div> 
+                <?php endforeach; ?>
             </div>
         </section>
-        <?php
-         //   require_once("../../src/generatorPost.php");
-        ?>
+      
         <section class="conteiner">
-            <?php foreach ($posts as $post) : ?>
+            <?php foreach ($posts as $post) :?>
             <action>
                 <div class="post-content">
                     <div class="post-header">
-                        <a class="post-a" href="">> Категория</a>
+                        <a class="post-a" href="">> <?= $post["CategoryPost.name"] ?></a>
                         <h2>
                             <a href="">
-                                <?= $post->name ?>Название поста
+                                <?= $post["name"] ?>
                             </a>
                         </h2>
                     </div>
                     <div class="post-main-content">
                         <p>
-                            <?= $post->description  ?>Описание поста цфщжацкшаожщыукпаоптдыфукжуопщушпофщкаоуктщкфпжу
+                            <?= $post["description"] ?>
                         </p>
                     </div>
                     <hr>
                     <div class="post-footer">
                         <p>
-                            <?= $post->dateCreate  ?>12-03-2023
+                            <?= $post["dateCreate"] ?>
                         </p>
                         <p>Автор поста: 
                             <a href="">
-                                <?= $post->idUser?>User
+                                <?= $post["idUser"] ?>
                             </a> 
                         </p>
                     </div>
@@ -114,18 +119,17 @@ if ($_SESSION['user']) {
     </footer>
     <script src="js/main.js"></script>
     <script>
-        let r = 0;
-function categoryPost() {
-    alert();
-    let formCategory = document.querySelector(".category-post");
-    if (r % 2 == 0) {
-        formCategory.style.display = 'none';
-    }
-    if (r % 2 > 0) {
-        formCategory.style.display = 'block';
-    }
-    r++;
-}
+    /*function categoryPost() {
+        alert();
+        let formCategory = document.querySelector(".category-post");
+        if (r % 2 == 0) {
+            formCategory.style.display = 'none';
+        }
+        if (r % 2 > 0) {
+            formCategory.style.display = 'block';
+        }
+        r++;
+    }*/
     </script>
 </body>
 

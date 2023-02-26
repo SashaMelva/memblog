@@ -1,6 +1,6 @@
 <?php
-//session_start();
-//require_once("../DB/Controller/RedistrationController.php");
+session_start();
+//require_once('../../src/conection.php');
 ?>
 <!DOCTYPE html>
 <html lang="en" class="page">
@@ -36,7 +36,7 @@
                     <button class="btn-form-exit"><img class="img-close" src="../src/img/close.png"
                             alt="Закрыть"></button>
                 </div>
-                <form class="content-form" action="../include/signup.php" method="POST"
+                <form class="content-form" action="../form/signup.php" method="POST"
                     onsubmit="return validateFormRegistration()">
                     <label class="text-input-form label-login">Введите логин</label>
                     <input id="login" name="login" type="text" class="input-form" placeholder="login">
@@ -46,11 +46,11 @@
                     <input id="replay-password" type="password" class="input-form" placeholder="password">
                     <p class="error"></p>
                     <?php 
-               if($_SESSION['message']) {
-                  echo '<p class="error">'. $_SESSION['message'] .'</p>';
-               }
-               unset($_SESSION['message']);
-            ?>
+                        if ($_SESSION['message']) {
+                            echo '<p class="error">'. $_SESSION['message'] .'</p>';
+                        }
+                        unset($_SESSION['message']);
+                    ?>
                     <input class="btn" value="Регистрация" type="submit"></input>
                 </form>
                 <button id="btn-check-password" class="btn-check-password-reg-form" onclick="cheeckedPassword()"><img

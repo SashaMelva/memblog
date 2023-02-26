@@ -1,10 +1,10 @@
 <?php 
 //require_once('../include/signin.php');
-/*session_start();
-if ($_SESSION['user']) {
+session_start();
+/*if ($_SESSION['user']) {
     header('Location: http://localhost:8080/views/authoriz_user.php');
 }*/
-//session_destroy();
+session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="en" class="page">
@@ -22,7 +22,7 @@ if ($_SESSION['user']) {
     <header class="content-header">
         <div class="conteiner conteiner-header">
             <div>
-                <img class="img-logo" src="src/img/blogging.png" alt="Логотип">
+                <img class="img-logo" src="../src/img/blogging.png" alt="Логотип">
             </div>
             <nav class="nav navigation-header">
                 <ul class="navigation-core">
@@ -40,18 +40,25 @@ if ($_SESSION['user']) {
                     <button class="btn-form-exit"><img class="img-close" src="../src/img/close.png"
                             alt="Закрыть"></button>
                 </div>
-                <form id="formAuthorization" class="content-form" action="../include/signin.php" method="POST"
+                <form id="formAuthorization" class="content-form" action="../form/signin.php" method="POST"
                     onsubmit="return validateFormAuthorization()">
                     <label for="login" class="text-input-form label-login">Введите логин</label>
                     <input id="login" name="login" type="text" class="input-form" placeholder="login" require>
                     <label for="password" class="text-input-form label-password">Введите пароль</label>
                     <input id="password" name="password" type="password" class="input-form" placeholder="password"
                         require>
+                    <?php 
+                        if ($_SESSION['message']) {
+                            echo '<p class="error">'. $_SESSION['message'] .'</p>';
+                        }
+                        unset($_SESSION['message']);
+                    ?>
                     <input class="btn" type="submit" value="Вход"></input>
                 </form>
                 <div class="dtn-out-form">
                     <a id="registration" href="registration.php" class="btn btn-registration">Регистрация</a>
                 </div>
+               
                 <button id="btn-check-password" class="btn-check-password-auth-form" onclick="cheeckedPassword()"><img
                         class="img-check-password" src="../src/img/icon-eye-close.png" alt=""></button>
             </div>

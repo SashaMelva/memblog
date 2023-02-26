@@ -299,6 +299,8 @@ li {
     margin-left: 10px;
 }
 .category-post  {
+    display: flex;
+    flex-direction: column;
     width: 20em;
     margin: 10px 20px 20px 0px;
 }
@@ -313,6 +315,7 @@ li {
     background-color: var(--primary-light);
     border-radius: 5px;
     padding: 30px 20px;
+    margin: 20px 0px;
 }
 
 .post-a {

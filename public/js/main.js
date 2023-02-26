@@ -74,11 +74,11 @@ function cheeckedPassword() {
     let input = document.querySelector("#password");
 
     if (check % 2 == 0) {
-        img.src = "src/img/icon-eye.png";
+        img.src = "../src/img/icon-eye.png";
         input.type = "text";
     }
     if (check % 2 > 0) {
-        img.src = "src/img/icon-eye-close.png";
+        img.src = "../src/img/icon-eye-close.png";
         input.type = "password";
     }
     check++;
@@ -90,11 +90,11 @@ function cheeckedReplayPassword() {
     let input = document.querySelector("#replay-password");
 
     if (check % 2 == 0) {
-        img.src = "src/img/icon-eye.png";
+        img.src = "../src/img/icon-eye.png";
         input.type = "text";
     }
     if (check % 2 > 0) {
-        img.src = "src/img/icon-eye-close.png";
+        img.src = "../src/img/icon-eye-close.png";
         input.type = "password";
     }
     check++;
@@ -114,15 +114,14 @@ function actualProfil() {
 }
 
 
-        let r = 0;
+let r = 0;
 function categoryPost() {
-    alert();
     let formCategory = document.querySelector(".category-post");
     if (r % 2 == 0) {
         formCategory.style.display = 'none';
     }
     if (r % 2 > 0) {
-        formCategory.style.display = 'block';
+        formCategory.style.display = 'flex';
     }
     r++;
 }
