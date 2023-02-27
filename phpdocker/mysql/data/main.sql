@@ -1,9 +1,11 @@
+/*CREATE DATABASE blog_db;
+
 CREATE TABLE User 
 (
     id INT PRIMARY KEY AUTO_INCREMENT, 
     login VARCHAR(20), 
     password VARCHAR(20)
-)
+);
 
 CREATE TABLE CategoryPost 
 (
@@ -23,5 +25,5 @@ CREATE TABLE Post
 );
 
 ALTER TABLE Post ADD FOREIGN KEY (idCategory) REFERENCES CategoryPost (idCategory);
-ALTER TABLE Post ADD FOREIGN KEY (idCategory) REFERENCES CategoryPost (idCategory);
+ALTER TABLE Post ADD FOREIGN KEY (idUser) REFERENCES User (id);*/
 

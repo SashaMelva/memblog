@@ -2,7 +2,7 @@
 
 require_once('conection.php');
 
-$sqlPosts = "SELECT Post.PostName, Post.description , Post.dateCreate, CategoryPost.name, User.login
+$sqlPosts = "SELECT /*Post.PostName,*/ Post.description , Post.dateCreate, CategoryPost.name, User.login
 FROM Post 
 INNER JOIN User 
 ON User.id = Post.idUser

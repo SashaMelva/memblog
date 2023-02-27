@@ -1,12 +1,12 @@
 <?php
-//session_start();
+session_start();
 //require_once('../src/conection.php');
 /*require_once('include/signin.php');
 session_start();
 if ($_SESSION['user']) {
     header('Location: profil.php');
 }*/
-require_once("../src/generatorContent.php");
+//require_once("../src/generatorContent.php");
 ?>
 <!DOCTYPE html>
 <html lang="en" class="page">
@@ -40,8 +40,12 @@ require_once("../src/generatorContent.php");
             <div class="header-main">
                 <button class="btn-burger" onclick="categoryPost()"><img src="../src/img/burger.png"></button>
                 <div>
-                    <label class="text-input-form">Поиск постов по названию</label>
-                    <input name="search" class="input-form input-search-post" type="test">
+                    <form action="../form/searchData.php" method="POST">
+                        <label for="search" class="text-input-form">Поиск постов по названию</label>
+                        <input id="search" name="search" class="input-form input-search-post" type="test">
+                        <button type="sumbit"></button>
+                    </form>
+                    
                 </div>
 
             </div>
@@ -90,6 +94,17 @@ require_once("../src/generatorContent.php");
             </action>
             <?php endforeach; ?>
         </section>
+        <div class="div-message">
+        <?php
+        
+    //  require_once('include/firstData.php');
+        
+        //require_once('include/signup.php');
+
+       echo ($_SESSION['message']);
+        ?>
+        <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
+    </div>
     </main>
 
     <footer class="content-footer">
