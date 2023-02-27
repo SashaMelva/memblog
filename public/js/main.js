@@ -70,10 +70,9 @@ function validateFormRegistration() {
 function validateFormUpdateProfil() {
     let login = document.querySelector("#login");
     let password = document.querySelector("#password");
-    
     let replayPassword = document.querySelector("#replay-password");
-    let labelLogin = document.querySelector("label.label-login");
     
+    let labelLogin = document.querySelector("label.label-login");
     let labelPassword = document.querySelector("label.label-password");
     let labelReplayPassword = document.querySelector("label.label-replay-password");
     

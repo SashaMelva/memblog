@@ -57,8 +57,10 @@
                 <form class="content-form" action="../form/updateProfil.php" method="POST" onsubmit="return validateFormUpdateProfil()">
                     <label for="login" class="label-login">Ваш логин</label>
                     <input type="text" id="login" name="login" class="input-form" placeholder="Добавить название" value = <?= $_SESSION['userLogin']?>>
+                    
                     <label for="password" class="text-input-form label-password">Введите старый пароль</label>
                     <input id="password" name="password" type="password" class="input-form" placeholder="password">
+                    
                     <label for="replay-password" class="text-input-form label-replay-password">Введите новый пароль</label>
                     <input id="replay-password" name="replay-password" type="password" class="input-form" placeholder="password">
                     <p class="error"></p>

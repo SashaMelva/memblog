@@ -8,3 +8,18 @@ Stack trace:
 #0 /memblog/public/form/addPost.php(22): mysqli_query()
 #1 {main}
   thrown in /memblog/public/form/addPost.php on line 22" while reading response header from upstream, client: 172.21.0.1, server: , request: "POST /form/addPost.php HTTP/1.1", upstream: "fastcgi://172.21.0.3:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/new_post.php"
+2023/02/27 14:47:30 [error] 35#35: *357 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect integer value: 'user21' for column 'idUser' at row 1 in /memblog/public/form/addPost.php:22
+Stack trace:
+#0 /memblog/public/form/addPost.php(22): mysqli_query()
+#1 {main}
+  thrown in /memblog/public/form/addPost.php on line 22" while reading response header from upstream, client: 172.21.0.1, server: , request: "POST /form/addPost.php HTTP/1.1", upstream: "fastcgi://172.21.0.3:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/new_post.php"
+2023/02/27 14:52:54 [error] 35#35: *359 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect integer value: 'user21' for column 'idUser' at row 1 in /memblog/public/form/addPost.php:22
+Stack trace:
+#0 /memblog/public/form/addPost.php(22): mysqli_query()
+#1 {main}
+  thrown in /memblog/public/form/addPost.php on line 22" while reading response header from upstream, client: 172.21.0.1, server: , request: "POST /form/addPost.php HTTP/1.1", upstream: "fastcgi://172.21.0.3:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/new_post.php"
+2023/02/27 14:54:47 [error] 35#35: *361 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "message" in /memblog/public/views/profil.php on line 43" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET /views/profil.php HTTP/1.1", upstream: "fastcgi://172.21.0.3:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/new_post.php"
+2023/02/27 14:55:48 [error] 35#35: *361 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "message" in /memblog/public/views/profil.php on line 43" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET /views/profil.php HTTP/1.1", upstream: "fastcgi://172.21.0.3:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/profil.php"
+2023/02/27 14:59:19 [error] 35#35: *369 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "message" in /memblog/public/views/profil.php on line 43" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET /views/profil.php HTTP/1.1", upstream: "fastcgi://172.21.0.3:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/profil.php"
+2023/02/27 14:59:19 [error] 35#35: *369 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "message" in /memblog/public/views/profil.php on line 43" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET /views/profil.php HTTP/1.1", upstream: "fastcgi://172.21.0.3:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/profil.php"
+2023/02/27 15:01:03 [error] 36#36: *372 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "message" in /memblog/public/views/profil.php on line 43" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET /views/profil.php HTTP/1.1", upstream: "fastcgi://172.21.0.3:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/profil.php"
