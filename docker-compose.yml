@@ -8,6 +8,7 @@ services:
         working_dir: /memblog
         volumes:
             - '.:/memblog'
+            - './phpdocker/mysql/data/main.sql:/docker-entrypoint-initdb.d'
         environment:
             - 'MYSQL_ROOT_PASSWORD=root'
             - 'MYSQL_DATABASE=blog_db'

@@ -67,6 +67,53 @@ function validateFormRegistration() {
 
 }
 
+function validateFormUpdateProfil() {
+    let login = document.querySelector("#login");
+    let password = document.querySelector("#password");
+    
+    let replayPassword = document.querySelector("#replay-password");
+    let labelLogin = document.querySelector("label.label-login");
+    
+    let labelPassword = document.querySelector("label.label-password");
+    let labelReplayPassword = document.querySelector("label.label-replay-password");
+    
+  
+    if (login.value.trim() == "" && password.value == "" && replayPassword.value == "") {
+        labelLogin.style.color = 'var(--primary-focus)';
+        login.style.borderColor = 'var(--primary-focus)';
+
+        labelPassword.style.color = 'var(--primary-focus)';
+        password.style.borderColor = 'var(--primary-focus)';
+
+        labelReplayPassword.style.color = 'var(--primary-focus)';
+        replayPassword.style.borderColor = 'var(--primary-focus)';
+        return false;
+    }
+    if (login.value.trim() == "") {
+        labelLogin.style.color = 'var(--primary-focus)';
+        login.style.borderColor = 'var(--primary-focus)';
+        return false;
+    }
+    if (password.value == "") {
+        labelPassword.style.color = 'var(--primary-focus)';
+        password.style.borderColor = 'var(--primary-focus)';
+        return false;
+    }
+    if (replayPassword.value == "") {
+        labelReplayPassword.style.color = 'var(--primary-focus)';
+        replayPassword.style.borderColor = 'var(--primary-focus)';
+        return false;
+    }
+}
+
+function validationNewPost() {
+    let namePost = document.querySelector("#namePost");
+   // let namePost = document.querySelector();
+   // let inp
+}
+
+
+
 function cheeckedPassword() {
 
     let btn = document.querySelector("#btn-check-password");

@@ -34,17 +34,7 @@ require_once("../src/generatorContent.php");
             </nav>
         </div>
     </header>
-   <!-- <div class="div-message">
-        <?php
-        
-        //require_once('../src/firstData.php');
-        
-        //require_once('include/signup.php');
-
-        //$_SESSION['message']
-        ?>
-        <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
-    </div>-->
+  
     <main class="main-content">
         <section class="conteiner header-main-conteiner">
             <div class="header-main">
@@ -73,10 +63,10 @@ require_once("../src/generatorContent.php");
             <action>
                 <div class="post-content">
                     <div class="post-header">
-                        <a class="post-a" href="">> <?= $post["CategoryPost.name"] ?></a>
+                        <a class="post-a" href="">> <?= $post["name"] ?></a>
                         <h2>
                             <a href="">
-                                <?= $post["name"] ?>
+                                <?= $post["PostName"] ?>
                             </a>
                         </h2>
                     </div>
@@ -92,7 +82,7 @@ require_once("../src/generatorContent.php");
                         </p>
                         <p>Автор поста: 
                             <a href="">
-                                <?= $post["idUser"] ?>
+                                <?= $post["login"] ?>
                             </a> 
                         </p>
                     </div>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../../src/conection.php');
+//require_once('../../src/storeData.php');
 
 $login = trim($_POST['login']);
 $password = $_POST['password'];
@@ -12,10 +13,8 @@ $chekUser = mysqli_query($conn, $sqlSelectCountUser);
 if (mysqli_num_rows($chekUser) == 1) {
     $user = mysqli_fetch_assoc($chekUser);
     if ($user['password'] == $password) {
-        $_SESSION['user'] = [
-            'id' => $user['id'],
-            'login' => $user['login'],
-        ];
+        $_SESSION['userId'] = $user['id'];
+        $_SESSION['userLogin'] =  $user['login'];
         header('Location: http://localhost:8080/views/authoriz_user.php');
     } else {
         $_SESSION['message'] = 'Вы ввели неверны пароль';

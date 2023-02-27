@@ -1,3 +1,6 @@
+<?php
+require_once("../../src/generatorContent.php");
+?>
 <!DOCTYPE html>
 <html lang="en" class="page">
 
@@ -26,32 +29,30 @@
             </nav>
         </div>
     </header>
-    <div class="div-message">
-        <?php
-        
-    //  require_once('include/firstData.php');
-        
-        //require_once('include/signup.php');
-
-        //$_SESSION['message']
-        ?>
-        <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
-    </div>
     <main class="main-content">
+
         <section class="conteiner container-form ">
             <div class="display-form display-add-post">
                 <div class="header-form content-form">
                     <legend class="legend-form">Новый пост</legend>
                     <button class="btn-form-exit"><img class="img-close" src="../src/img/close.png" alt="Закрыть"></button>
                 </div>
-                <form action="" method="POST" class="content-form">
+                <form action="../form/addPost.php" method="POST" class="content-form">
                     <label class="text-input-form"></label>
-                    <input type="text" name="" class="input-form" placeholder="Добавить название">
-                    <textarea class="area input-form" placeholder="Добавить описание"></textarea>
+                    <input id="namePost" type="text" name="postName" class="input-form" placeholder="Добавить название">
+                    <textarea name="decriptionPost" class="area input-form" placeholder="Добавить описание"></textarea>
                     <label class="text-input-form">Добавте изображение</label>
                     <div>
                         <input class="input-form input-for-add-post" type="file" accept=".png,.jpg">
                     </div>
+                    <label>Выберите категорию</label>
+                    <select name="category" class="input-form">
+                        <?php foreach ($categories as $category) :?>
+                            <option value=<?= $category["name"]?>>
+                                <?= $category["name"]?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
                     <input class="btn" type="submit" value="Сохранить"></input>
                 </form>
             </div>
@@ -73,18 +74,6 @@
             </div>
         </div>
     </footer>
-
     <script src="../js/main.js"></script>
-    <script>
-        /*function registration() {
-            let btn = document.querySelector("#registration");
-            btn.addEventListener("click", setActionValue);
-        }*/
-        
-
-       // let navbar = document.querySelector(".nav");
-
-       
-    </script>
 </body>
 </html>

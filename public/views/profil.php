@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en" class="page">
 <head>
@@ -6,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../src/style/styles.css">
 
-    <title>Новый пост</title>
+    <title>Обновление профиля</title>
 </head>
 
 <body class="grid-main-content">
@@ -24,10 +26,6 @@
             </nav>
         </div>
     </header>
-    <div class="div-message">
-        <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
-    </div>
-    
     <main class="main-content">
         <section class="conteiner container-form ">
             <div class="display-form display-add-post actual-profil">
@@ -37,7 +35,16 @@
                 </div>
                 <div class="content-form">
                     <label>Ваш логин</label>
-                    <input readonly="readonly" type="text" re name="login" class="input-form" placeholder="Добавить название">
+                    <input readonly="readonly" type="text" class="input-form" value = <?= $_SESSION['userLogin']?>>
+                    <a href="../index.php">
+                        Выход из аккаунта
+                    </a>
+                    <?php 
+                        if($_SESSION['message']) {
+                            echo '<p class="error">'. $_SESSION['message'] .'</p>';
+                        }
+                        unset($_SESSION['message']);
+                    ?>
                 </div>
                 <button class="btn btn-profil" onclick="changeProfile()">Изменить профиль</button>
             </div>
@@ -47,20 +54,14 @@
                     <legend class="legend-form">Профиль</legend>
                     <button class="btn-form-exit"><img class="img-close" src="../src/img/close.png" alt="Закрыть"></button>
                 </div>
-                <form class="content-form">
-                    <label>Ваш логин</label>
-                    <input type="text" re name="login" class="input-form" placeholder="Добавить название">
-                    <label class="text-input-form label-password">Введите старый пароль</label>
+                <form class="content-form" action="../form/updateProfil.php" method="POST" onsubmit="return validateFormUpdateProfil()">
+                    <label for="login" class="label-login">Ваш логин</label>
+                    <input type="text" id="login" name="login" class="input-form" placeholder="Добавить название" value = <?= $_SESSION['userLogin']?>>
+                    <label for="password" class="text-input-form label-password">Введите старый пароль</label>
                     <input id="password" name="password" type="password" class="input-form" placeholder="password">
-                    <label class="text-input-form label-replay-password">Введите новый пароль</label>
-                    <input id="replay-password" type="password" class="input-form" placeholder="password">
+                    <label for="replay-password" class="text-input-form label-replay-password">Введите новый пароль</label>
+                    <input id="replay-password" name="replay-password" type="password" class="input-form" placeholder="password">
                     <p class="error"></p>
-                    <?php 
-                    if($_SESSION['message']) {
-                        echo '<p class="error">'. $_SESSION['message'] .'</p>';
-                        }
-                    unset($_SESSION['message']);
-                    ?>
                     <input class="btn" value="Обновить" type="submit"></input>
                 </form>
                 <button id="btn-check-password" class="btn-check-password-reg-form" onclick="cheeckedPassword()"><img class="img-check-password" src="../src/img/icon-eye-close.png" alt=""></button>
@@ -78,7 +79,6 @@
                     <li><a id="main" class="a-header" href="authoriz_user.php">Главная</a></li>
                 </ul>
             </nav>
-
             <div>
                 <p>Данный проект реализован не для продажи</p>
                 <p>Ссылка на GitHub репозитоий: </p>

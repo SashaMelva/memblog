@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="page">
 
@@ -33,7 +37,7 @@
         
         //require_once('include/signup.php');
 
-        //$_SESSION['message']
+       // echo ($_SESSION['login']);
         ?>
         <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
     </div>
