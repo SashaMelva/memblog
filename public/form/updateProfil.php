@@ -10,7 +10,7 @@ $formPassword = $_POST['password'];
 $idUser = $_SESSION['userId'];
 
 
-$sqlOldPassword = "SELECT password From User WHERE id='$idUser' LIMIT 1";
+$sqlOldPassword = "SELECT password From User WHERE id='$idUser' AND password='$formPassword' LIMIT 1";
 $sqlDuplicationLogin = "SELECT * FROM User WHERE login='$newLogin' LIMIT 1";
 $sqlUpdateUser = "UPDATE User SET login='$newLogin', password='$newPassword' WHERE id='$idUser'";
 
@@ -20,7 +20,7 @@ $oldPassword = mysqli_query($conn, $sqlOldPassword);
 $countDuplicateLogin = mysqli_query($conn, $sqlDuplicationLogin);
 
 
-if ($oldPassword != $formPassword) {
+if (mysqli_num_rows($oldPassword) == 0) {
     $_SESSION['message'] = 'Вы ввели неверный пароль';
     header('Location: http://localhost:8080/views/profil.php');
 } elseif (mysqli_num_rows($countDuplicateLogin) >= 1) {

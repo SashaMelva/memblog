@@ -6,7 +6,7 @@ session_start();
 if ($_SESSION['user']) {
     header('Location: profil.php');
 }*/
-//require_once("../src/generatorContent.php");
+require_once("../src/generatorContent.php");
 ?>
 <!DOCTYPE html>
 <html lang="en" class="page">
@@ -34,11 +34,28 @@ if ($_SESSION['user']) {
             </nav>
         </div>
     </header>
-  
+    <div class="div-message">
+        <?php
+            echo ($_SESSION['message']);
+            unset($_SESSION['message']);
+        ?>
+        <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
+    </div>
     <main class="main-content">
         <section class="conteiner header-main-conteiner">
             <div class="header-main">
                 <button class="btn-burger" onclick="categoryPost()"><img src="../src/img/burger.png"></button>
+            </div>
+            <div class="category-post" style="display:none;">
+                <!--<p>Выберите категории постов</p>
+                <?php foreach ($categories as $category) : ?>
+                   <div>
+                        <input type="checkbox">
+                        <label>
+                            <?= $category["name"]?>
+                        </label>
+                    </div> 
+                <?php endforeach;?>-->
                 <div>
                     <form action="../form/searchData.php" method="POST">
                         <label for="search" class="text-input-form">Поиск постов по названию</label>
@@ -47,18 +64,6 @@ if ($_SESSION['user']) {
                     </form>
                     
                 </div>
-
-            </div>
-            <div class="category-post" style="display:none;">
-                <p>Выберите категории постов</p>
-                <?php foreach ($categories as $category) : ?>
-                   <div>
-                        <input type="checkbox">
-                        <label>
-                            <?= $category["name"]?>
-                        </label>
-                    </div> 
-                <?php endforeach; ?>
             </div>
         </section>
       
@@ -94,17 +99,6 @@ if ($_SESSION['user']) {
             </action>
             <?php endforeach; ?>
         </section>
-        <div class="div-message">
-        <?php
-        
-    //  require_once('include/firstData.php');
-        
-        //require_once('include/signup.php');
-
-       echo ($_SESSION['message']);
-        ?>
-        <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
-    </div>
     </main>
 
     <footer class="content-footer">
