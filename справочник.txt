@@ -41,3 +41,5 @@ DROP DATABASE
 
 
 https://metanit.com/php/mysql/3.1.php
+
+https://stepik.org/course/63054/promo
