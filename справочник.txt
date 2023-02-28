@@ -43,3 +43,11 @@ DROP DATABASE
 https://metanit.com/php/mysql/3.1.php
 
 https://stepik.org/course/63054/promo
+
+
+/*Кодировка*/
+https://russianblogs.com/article/39921179467/
+https://qna.habr.com/q/1100056
+
+
+show variables like'char%';

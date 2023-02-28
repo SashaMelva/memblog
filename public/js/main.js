@@ -107,9 +107,15 @@ function validateFormUpdateProfil() {
 
 function validationNewPost() {
     let namePost = document.querySelector("#namePost");
-    let labelNamePost = document.querySelector("label.namePost");
-    if (namePost.vaiue.trim() == "") {
+    let labelNamePost = document.querySelector("label.label-name-post");
+    if (namePost.value.trim() == "") {
         labelNamePost.style.color = 'var(--primary-focus)';
+        namePost.style.borderColor = 'var(--primary-focus)';
+        return false;
+    }
+    if (namePost.value > 255) {
+        namePost.style.borderColor = 'var(--primary-focus)';
+        labelNamePost.style.color  = 'var(--primary-focus)';
         return false;
     }
 }
@@ -118,7 +124,6 @@ function validationNewPost() {
 
 function cheeckedPassword() {
 
-    let btn = document.querySelector("#btn-check-password");
     let img = document.querySelector("img.img-check-password");
     let input = document.querySelector("#password");
 

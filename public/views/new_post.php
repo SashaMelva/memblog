@@ -29,22 +29,24 @@
             </nav>
         </div>
     </header>
+    <?php if ($_SESSION['message']) :?>
+        <div class="div-message">
+            <?php
+                echo ($_SESSION['messagePost']);
+                unset($_SESSION['messagePost']);
+            ?>
+            <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
+        </div>
+    <?php endif; ?>
     <main class="main-content">
-    <div class="div-message">
-        <?php
-            echo ($_SESSION['messagePost']);
-            unset($_SESSION['messagePost']);
-        ?>
-        <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
-    </div>
         <section class="conteiner container-form ">
             <div class="display-form display-add-post">
                 <div class="header-form content-form">
                     <legend class="legend-form">Новый пост</legend>
-                    <button class="btn-form-exit"><img class="img-close" src="../src/img/close.png" alt="Закрыть"></button>
+                    <button class="btn-form-exit"><img class="img-close" src="/src/img/close.png" alt="Закрыть"></button>
                 </div>
                 <form action="/form/addPost.php" method="POST" class="content-form" onsubmit="return validationNewPost()">
-                    <label for="namePost" class="namePost text-input-form"></label>
+                    <label for="namePost" class="label-name-post text-input-form"></label>
                     <input id="namePost" type="text" name="postName" class="input-form" placeholder="Добавить название">
                     <textarea name="decriptionPost" class="area input-form" placeholder="Добавить описание"></textarea>
                     <label>Выберите категорию</label>

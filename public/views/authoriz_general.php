@@ -10,13 +10,6 @@
 
     <title>Новый пост</title>
 </head>
-<div class="div-message">
-        <?php
-            echo ($_SESSION['message']);
-            unset($_SESSION['message']);
-        ?>
-        <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
-    </div>
 <body class="grid-main-content">
     <header class="content-header">
         <div class="conteiner conteiner-header">
@@ -32,6 +25,15 @@
             </nav>
         </div>
     </header>
+    <?php if ($_SESSION['message']) :?>
+        <div class="div-message">
+            <?php
+                echo ($_SESSION['message']);
+                unset($_SESSION['message']);
+            ?>
+            <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
+        </div>
+    <?php endif; ?>
     <main class="main-content">
     <section class="conteiner header-main-conteiner">
             <div class="header-main">

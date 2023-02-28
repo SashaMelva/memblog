@@ -5,6 +5,12 @@ require_once('../../src/conection.php');
 $login = trim($_POST['login']);
 $password = $_POST['password'];
 
+if (strlen($login) > 20 || strlen($password) > 20) {
+    $_SESSION['message'] = "Длина логина и пароля не более 20 символов";
+    header('Location: /views/registration.php');
+}
+
+
 $sqlDuplicationLogin = "SELECT * FROM users WHERE login='$login'";
 $sqlAddUser = "INSERT INTO users (login, password) VALUES('$login','$password')";
 

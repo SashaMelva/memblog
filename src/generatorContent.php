@@ -12,6 +12,7 @@ ON c.category_id = p.post_category_id";
 $posts = mysqli_query($conn, $sqlPosts);
 
 $sqlCategory = "SELECT * FROM categories_posts";
+
 $categories = mysqli_query($conn, $sqlCategory);
 
 
