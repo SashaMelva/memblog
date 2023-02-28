@@ -17,7 +17,7 @@ CREATE TABLE categories_posts
 CREATE TABLE posts 
 (
     post_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL, 
-    post_name TEXT NOT NULL, 
+    post_name VARCHAR(255) NOT NULL, 
     post_description TEXT, 
     post_create_date DATETIME NOT NULL,
     post_category_id INT NOT NULL,

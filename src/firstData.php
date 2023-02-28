@@ -33,7 +33,7 @@ if(mysqli_query($conn, $sqlPostAdd)) {
     echo "Данные о постах успешно добавлены";
 } else{
     echo "Ошибка: " . $sql . "<br>" . mysqli_error($conn);
-}*/
+}
 
 
 //mysqli_close($conn);

@@ -4,13 +4,9 @@ require_once('../../src/conection.php');
 
 $namePost = trim($_POST["postName"]);
 $descriptionPost = $_POST["decriptionPost"];
-$category = $_POST['category'];
+$idCategory = $_POST['category'];
 $authtor = $_SESSION['userId'];
 $dateCreate = date("Y.m.d H:i:s");
-
-$sqlSelectCategory = "SELECT category_id FROM categories_posts WHERE category_name='$category'";
-$categoriesFromDB = mysqli_fetch_assoc(mysqli_query($conn, $sqlSelectCategory));
-$idCategory = $categoriesFromDB['idCategory'];
 
 
 $sqlAddPost = "INSERT INTO posts 

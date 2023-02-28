@@ -3,4 +3,4 @@ session_start();
 
 unset($_SESSION['userId']);
 unset($_SESSION['userLogin']);
-header('Location: ../index.php');
+header('Location: /index.php');

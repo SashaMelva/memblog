@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../../src/conection.php');
+
 $login = trim($_POST['login']);
 $password = $_POST['password'];
 

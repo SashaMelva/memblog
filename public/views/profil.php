@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../src/style/styles.css">
+    <link rel="stylesheet" type="text/css" href="/src/style/styles.css">
 
     <title>Обновление профиля</title>
 </head>
@@ -15,13 +15,13 @@
     <header class="content-header">
         <div class="conteiner conteiner-header">
             <div>
-                <img class="img-logo" src="../src/img/blogging.png" alt="Логотип">
+                <img class="img-logo" src="/src/img/blogging.png" alt="Логотип">
             </div>
             <nav class="nav navigation-header">
                 <ul class="navigation-core">
-                <li><a id="profil" class="a-header" href="profil.php">Профиль</a></li>
-                    <li><a id="new-post" class="a-header" href="new_post.php">Новый пост</a></li>
-                    <li><a id="main" class="a-header" href="authoriz_user.php">Главная</a></li>
+                    <li><a id="profil" class="a-header" href="/views/profil.php">Профиль</a></li>
+                    <li><a id="new-post" class="a-header" href="/views/new_post.php">Новый пост</a></li>
+                    <li><a id="main" class="a-header" href="/views/authoriz_user.php">Главная</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,12 +31,12 @@
             <div class="display-form display-add-post actual-profil">
                 <div class="header-form content-form">
                     <legend class="legend-form">Профиль</legend>
-                    <button class="btn-form-exit"><img class="img-close" src="../src/img/close.png" alt="Закрыть"></button>
+                    <button class="btn-form-exit"><img class="img-close" src="/src/img/close.png" alt="Закрыть"></button>
                 </div>
                 <div class="content-form">
                     <label>Ваш логин</label>
                     <input readonly="readonly" type="text" class="input-form" value = <?= $_SESSION['userLogin']?>>
-                    <a href="../index.php">
+                    <a href="/index.php">
                         Выход из аккаунта
                     </a>
                     <?php 
@@ -52,7 +52,7 @@
             <div class="display-form display-add-post changed-profil" style="display:none;">
                 <div class="header-form content-form">
                     <legend class="legend-form">Профиль</legend>
-                    <button class="btn-form-exit"><img class="img-close" src="../src/img/close.png" alt="Закрыть"></button>
+                    <button class="btn-form-exit"><img class="img-close" src="/src/img/close.png" alt="Закрыть"></button>
                 </div>
                 <form class="content-form" action="../form/updateProfil.php" method="POST" onsubmit="return validateFormUpdateProfil()">
                     <label for="login" class="label-login">Ваш логин</label>
@@ -66,8 +66,12 @@
                     <p class="error"></p>
                     <input class="btn" value="Обновить" type="submit"></input>
                 </form>
-                <button id="btn-check-password" class="btn-check-password-reg-form" onclick="cheeckedPassword()"><img class="img-check-password" src="../src/img/icon-eye-close.png" alt=""></button>
-                <button id="btn-check-password-replay" class="btn-check-password-replay-reg-form" onclick="cheeckedReplayPassword()"><img class="img-check-password-replay img-check-password" src="../src/img/icon-eye-close.png" alt=""></button>
+                <button id="btn-check-password" class="btn-check-password-reg-form" onclick="cheeckedPassword()">
+                    <img class="img-check-password" src="/src/img/icon-eye-close.png" alt="">
+                </button>
+                <button id="btn-check-password-replay" class="btn-check-password-replay-reg-form" onclick="cheeckedReplayPassword()">
+                    <img class="img-check-password-replay img-check-password" src="/src/img/icon-eye-close.png" alt="">
+                </button>
                 <button class="btn btn-profil" onclick="actualProfil()">Отмена</button>
             </div>
         </section>
@@ -76,9 +80,9 @@
         <div class="conteiner container-footer">
             <nav>
                 <ul class="navigation-core-header">
-                <li><a id="profil" class="a-header" href="profil.php">Профиль</a></li>
-                    <li><a id="new-post" class="a-header" href="new_post.php">Новый пост</a></li>
-                    <li><a id="main" class="a-header" href="authoriz_user.php">Главная</a></li>
+                    <li><a id="profil" class="a-header" href="/views/profil.php">Профиль</a></li>
+                    <li><a id="new-post" class="a-header" href="/views/new_post.php">Новый пост</a></li>
+                    <li><a id="main" class="a-header" href="/views/authoriz_user.php">Главная</a></li>
                 </ul>
             </nav>
             <div>
@@ -87,7 +91,7 @@
             </div>
         </div>
     </footer>
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
     <script>
 
         function cheeckedPassword() {
@@ -97,11 +101,11 @@
         let input = document.querySelector("#password");
 
         if (check % 2 == 0) {
-            img.src = "../src/img/icon-eye.png";
+            img.src = "/src/img/icon-eye.png";
             input.type = "text";
         }
         if (check % 2 > 0) {
-            img.src = "../src/img/icon-eye-close.png";
+            img.src = "/src/img/icon-eye-close.png";
             input.type = "password";
         }
         check++;
@@ -114,11 +118,11 @@
         let input = document.querySelector("#replay-password");
 
         if (check % 2 == 0) {
-            img.src = "../src/img/icon-eye.png";
+            img.src = "/src/img/icon-eye.png";
             input.type = "text";
         }
         if (check % 2 > 0) {
-            img.src = "../src/img/icon-eye-close.png";
+            img.src = "/src/img/icon-eye-close.png";
             input.type = "password";
         }
         check++;

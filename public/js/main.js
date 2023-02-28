@@ -107,8 +107,11 @@ function validateFormUpdateProfil() {
 
 function validationNewPost() {
     let namePost = document.querySelector("#namePost");
-   // let namePost = document.querySelector();
-   // let inp
+    let labelNamePost = document.querySelector("label.namePost");
+    if (namePost.vaiue.trim() == "") {
+        labelNamePost.style.color = 'var(--primary-focus)';
+        return false;
+    }
 }
 
 
@@ -120,11 +123,11 @@ function cheeckedPassword() {
     let input = document.querySelector("#password");
 
     if (check % 2 == 0) {
-        img.src = "../src/img/icon-eye.png";
+        img.src = "/src/img/icon-eye.png";
         input.type = "text";
     }
     if (check % 2 > 0) {
-        img.src = "../src/img/icon-eye-close.png";
+        img.src = "/src/img/icon-eye-close.png";
         input.type = "password";
     }
     check++;
@@ -136,11 +139,11 @@ function cheeckedReplayPassword() {
     let input = document.querySelector("#replay-password");
 
     if (check % 2 == 0) {
-        img.src = "../src/img/icon-eye.png";
+        img.src = "/src/img/icon-eye.png";
         input.type = "text";
     }
     if (check % 2 > 0) {
-        img.src = "../src/img/icon-eye-close.png";
+        img.src = "/src/img/icon-eye-close.png";
         input.type = "password";
     }
     check++;

@@ -1,10 +1,12 @@
 <?php 
-//require_once('../include/signin.php');
+
 session_start();
-/*if ($_SESSION['user']) {
+if ($_SESSION['user']) {
     header('Location: http://localhost:8080/views/authoriz_user.php');
-}*/
-session_destroy();
+} else {
+    session_destroy();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" class="page">
@@ -13,7 +15,7 @@ session_destroy();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../src/style/styles.css">
+    <link rel="stylesheet" type="text/css" href="/src/style/styles.css">
 
     <title>Блог</title>
 </head>
@@ -22,12 +24,12 @@ session_destroy();
     <header class="content-header">
         <div class="conteiner conteiner-header">
             <div>
-                <img class="img-logo" src="../src/img/blogging.png" alt="Логотип">
+                <img class="img-logo" src="/src/img/blogging.png" alt="Логотип">
             </div>
             <nav class="nav navigation-header">
                 <ul class="navigation-core">
-                    <li><a id="authorization" class="a-header" href="views/authorization.php">Авторизация</a></li>
-                    <li><a id="main" class="a-header" href="../">Главная</a></li>
+                    <li><a id="authorization" class="a-header" href="/views/authorization.php">Авторизация</a></li>
+                    <li><a id="main" class="a-header" href="/index.php">Главная</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,7 +39,7 @@ session_destroy();
             <div class="display-form">
                 <div class="header-form content-form">
                     <legend class="legend-form">Авторизация</legend>
-                    <button class="btn-form-exit"><img class="img-close" src="../src/img/close.png"
+                    <button class="btn-form-exit"><img class="img-close" src="/src/img/close.png"
                             alt="Закрыть"></button>
                 </div>
                 <form id="formAuthorization" class="content-form" action="../form/signin.php" method="POST"
@@ -60,7 +62,7 @@ session_destroy();
                 </div>
                
                 <button id="btn-check-password" class="btn-check-password-auth-form" onclick="cheeckedPassword()"><img
-                        class="img-check-password" src="../src/img/icon-eye-close.png" alt=""></button>
+                        class="img-check-password" src="/src/img/icon-eye-close.png" alt=""></button>
             </div>
         </section>
     </main>
@@ -68,8 +70,8 @@ session_destroy();
         <div class="conteiner container-footer">
             <nav>
                 <ul class="navigation-core-header">
-                    <li><a class="a-footer" href="authorization.php">Авторизация</a></li>
-                    <li><a class="a-footer" href="../">Главная</a></li>
+                    <li><a class="a-footer" href="/views/authorization.php">Авторизация</a></li>
+                    <li><a class="a-footer" href="/index.php">Главная</a></li>
                 </ul>
             </nav>
 
@@ -80,5 +82,5 @@ session_destroy();
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>

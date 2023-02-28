@@ -21,8 +21,9 @@ if ($countPost > 0) {
     $_SESSION["message"] = "По данному запросу посты не найдены";
 }
 
-$sqlCategory = "SELECT * FROM CategoryPost";
+$sqlCategory = "SELECT * FROM categories_posts";
 $categories = mysqli_query($conn, $sqlCategory);
 
 mysqli_close($conn);
+
 require_once("../general_html.php");

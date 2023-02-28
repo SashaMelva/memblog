@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" class="page">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +18,7 @@
             <nav class="nav navigation-header">
                 <ul class="navigation-core">
                     <li><a id="authorization" class="a-header" href="/views/authorization.php">Авторизация</a></li>
-                    <li><a id="main" class="a-header" href="#">Главная</a></li>
+                    <li><a id="main" class="a-header" href="/index.php">Главная</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,7 +44,6 @@
                 </div>
             </div>
         </section>
-      
         <section class="conteiner">
             <?php foreach ($posts as $post) :?>
             <action>
@@ -85,30 +83,16 @@
             <nav>
                 <ul class="navigation-core-header">
                     <li><a class="a-footer" href="/views/authorization.php">Авторизация</a></li>
-                    <li><a class="a-footer" href="#">Главная</a></li>
+                    <li><a class="a-footer" href="/index.php">Главная</a></li>
                 </ul>
             </nav>
-
             <div>
                 <p>Данный проект реализован не для продажи</p>
                 <p>Ссылка на GitHub разработчика: </p>
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
-    <script>
-    /*function categoryPost() {
-        alert();
-        let formCategory = document.querySelector(".category-post");
-        if (r % 2 == 0) {
-            formCategory.style.display = 'none';
-        }
-        if (r % 2 > 0) {
-            formCategory.style.display = 'block';
-        }
-        r++;
-    }*/
-    </script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

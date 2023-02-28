@@ -1,5 +1,5 @@
 <?php
-require_once("../../src/generatorContent.php");
+    require_once("../../src/generatorContent.php");
 ?>
 <!DOCTYPE html>
 <html lang="en" class="page">
@@ -43,14 +43,14 @@ require_once("../../src/generatorContent.php");
                     <legend class="legend-form">Новый пост</legend>
                     <button class="btn-form-exit"><img class="img-close" src="../src/img/close.png" alt="Закрыть"></button>
                 </div>
-                <form action="/form/addPost.php" method="POST" class="content-form">
-                    <label class="text-input-form"></label>
+                <form action="/form/addPost.php" method="POST" class="content-form" onsubmit="return validationNewPost()">
+                    <label for="namePost" class="namePost text-input-form"></label>
                     <input id="namePost" type="text" name="postName" class="input-form" placeholder="Добавить название">
                     <textarea name="decriptionPost" class="area input-form" placeholder="Добавить описание"></textarea>
                     <label>Выберите категорию</label>
                     <select name="category" class="input-form">
                         <?php foreach ($categories as $category) :?>
-                            <option value=<?= $category["category_name"]?>>
+                            <option value=<?= $category["category_id"]?>>
                                 <?= $category["category_name"]?>
                             </option>
                         <?php endforeach; ?>

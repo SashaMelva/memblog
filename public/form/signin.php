@@ -12,7 +12,7 @@ $chekUser = mysqli_query($conn, $sqlSelectCountUser);
 if (mysqli_num_rows($chekUser) == 1) {
     $user = mysqli_fetch_assoc($chekUser);
     if ($user['password'] == $password) {
-        $_SESSION['userId'] = $user['id'];
+        $_SESSION['userId'] = $user['user_id'];
         $_SESSION['userLogin'] =  $user['login'];
         header('Location: http://localhost:8080/views/authoriz_user.php');
     } else {
