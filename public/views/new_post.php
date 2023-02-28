@@ -8,7 +8,7 @@ require_once("../../src/generatorContent.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../src/style/styles.css">
+    <link rel="stylesheet" type="text/css" href="/src/style/styles.css">
 
     <title>Новый пост</title>
 </head>
@@ -18,7 +18,7 @@ require_once("../../src/generatorContent.php");
     <header class="content-header">
         <div class="conteiner conteiner-header">
             <div>
-                <img class="img-logo" src="../src/img/blogging.png" alt="Логотип">
+                <img class="img-logo" src="/src/img/blogging.png" alt="Логотип">
             </div>
             <nav class="nav navigation-header">
                 <ul class="navigation-core">
@@ -30,21 +30,23 @@ require_once("../../src/generatorContent.php");
         </div>
     </header>
     <main class="main-content">
-
+    <div class="div-message">
+        <?php
+            echo ($_SESSION['messagePost']);
+            unset($_SESSION['messagePost']);
+        ?>
+        <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
+    </div>
         <section class="conteiner container-form ">
             <div class="display-form display-add-post">
                 <div class="header-form content-form">
                     <legend class="legend-form">Новый пост</legend>
                     <button class="btn-form-exit"><img class="img-close" src="../src/img/close.png" alt="Закрыть"></button>
                 </div>
-                <form action="../form/addPost.php" method="POST" class="content-form">
+                <form action="/form/addPost.php" method="POST" class="content-form">
                     <label class="text-input-form"></label>
                     <input id="namePost" type="text" name="postName" class="input-form" placeholder="Добавить название">
                     <textarea name="decriptionPost" class="area input-form" placeholder="Добавить описание"></textarea>
-                    <label class="text-input-form">Добавте изображение</label>
-                    <div>
-                        <input class="input-form input-for-add-post" type="file" accept=".png,.jpg">
-                    </div>
                     <label>Выберите категорию</label>
                     <select name="category" class="input-form">
                         <?php foreach ($categories as $category) :?>
@@ -74,6 +76,6 @@ require_once("../../src/generatorContent.php");
             </div>
         </div>
     </footer>
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

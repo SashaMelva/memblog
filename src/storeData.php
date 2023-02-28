@@ -1,5 +1,0 @@
-<?php
-
-$idUser = '';
-$idPost = '';
-?>

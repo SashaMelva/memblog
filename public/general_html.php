@@ -37,22 +37,11 @@
                 <button class="btn-burger" onclick="categoryPost()"><img src="/src/img/burger.png"></button>
             </div>
             <div class="category-post" style="display:none;">
-                <!--<p>Выберите категории постов</p>
-                <?php foreach ($categories as $category) : ?>
-                   <div>
-                        <input type="checkbox">
-                        <label>
-                            <?= $category["name"]?>
-                        </label>
-                    </div> 
-                <?php endforeach;?>-->
                 <div>
                     <form action="/form/searchData.php" method="GET">
                         <label for="search" class="text-input-form">Поиск постов по названию</label>
                         <input id="search" name="search" class="input-form input-search-post" type="test">
-                        <button type="sumbit"></button>
                     </form>
-                    
                 </div>
             </div>
         </section>
