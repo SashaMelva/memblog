@@ -82,3 +82,35 @@ Stack trace:
 2023/02/28 11:06:19 [error] 31#31: *311 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "message" in /memblog/public/general_html.php on line 29" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://172.21.0.4:9000", host: "localhost:8080"
 2023/02/28 11:06:21 [error] 31#31: *308 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "message" in /memblog/public/views/authorization.php on line 51" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET /views/authorization.php HTTP/1.1", upstream: "fastcgi://172.21.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/"
 2023/02/28 11:06:24 [error] 31#31: *311 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined array key "message" in /memblog/public/general_html.php on line 29" while reading response header from upstream, client: 172.21.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://172.21.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/authorization.php"
+2023/02/28 11:52:24 [error] 31#31: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'blog_db.CategoryPost' doesn't exist in /memblog/src/generatorContent.php:14
+Stack trace:
+#0 /memblog/src/generatorContent.php(14): mysqli_query()
+#1 /memblog/public/index.php(5): require_once('...')
+#2 {main}
+  thrown in /memblog/src/generatorContent.php on line 14" while reading response header from upstream, client: 172.22.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://172.22.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/authorization.php"
+2023/02/28 11:52:25 [error] 31#31: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'blog_db.CategoryPost' doesn't exist in /memblog/src/generatorContent.php:14
+Stack trace:
+#0 /memblog/src/generatorContent.php(14): mysqli_query()
+#1 /memblog/public/index.php(5): require_once('...')
+#2 {main}
+  thrown in /memblog/src/generatorContent.php on line 14" while reading response header from upstream, client: 172.22.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://172.22.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/authorization.php"
+2023/02/28 11:52:26 [error] 31#31: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'blog_db.CategoryPost' doesn't exist in /memblog/src/generatorContent.php:14
+Stack trace:
+#0 /memblog/src/generatorContent.php(14): mysqli_query()
+#1 /memblog/public/index.php(5): require_once('...')
+#2 {main}
+  thrown in /memblog/src/generatorContent.php on line 14" while reading response header from upstream, client: 172.22.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://172.22.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/authorization.php"
+2023/02/28 11:52:35 [error] 32#32: *6 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined variable $posts in /memblog/public/views/authoriz_user.php on line 53; PHP message: PHP Warning:  foreach() argument must be of type array|object, null given in /memblog/public/views/authoriz_user.php on line 53" while reading response header from upstream, client: 172.22.0.1, server: , request: "GET /views/authoriz_user.php HTTP/1.1", upstream: "fastcgi://172.22.0.4:9000", host: "localhost:8080"
+2023/02/28 11:52:35 [error] 32#32: *6 FastCGI sent in stderr: "PHP message: PHP Warning:  Undefined variable $posts in /memblog/public/views/authoriz_user.php on line 53; PHP message: PHP Warning:  foreach() argument must be of type array|object, null given in /memblog/public/views/authoriz_user.php on line 53" while reading response header from upstream, client: 172.22.0.1, server: , request: "GET /views/authoriz_user.php HTTP/1.1", upstream: "fastcgi://172.22.0.4:9000", host: "localhost:8080"
+2023/02/28 11:52:35 [error] 35#35: *5 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'blog_db.CategoryPost' doesn't exist in /memblog/src/generatorContent.php:14
+Stack trace:
+#0 /memblog/src/generatorContent.php(14): mysqli_query()
+#1 /memblog/public/index.php(5): require_once('...')
+#2 {main}
+  thrown in /memblog/src/generatorContent.php on line 14" while reading response header from upstream, client: 172.22.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.22.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/authoriz_user.php"
+2023/02/28 11:52:35 [error] 35#35: *5 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'blog_db.CategoryPost' doesn't exist in /memblog/src/generatorContent.php:14
+Stack trace:
+#0 /memblog/src/generatorContent.php(14): mysqli_query()
+#1 /memblog/public/index.php(5): require_once('...')
+#2 {main}
+  thrown in /memblog/src/generatorContent.php on line 14" while reading response header from upstream, client: 172.22.0.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://172.22.0.4:9000", host: "localhost:8080", referrer: "http://localhost:8080/views/authoriz_user.php"
