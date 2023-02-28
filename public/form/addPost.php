@@ -8,13 +8,13 @@ $category = $_POST['category'];
 $authtor = $_SESSION['userId'];
 $dateCreate = date("Y.m.d H:i:s");
 
-$sqlSelectCategory = "SELECT idCategory FROM CategoryPost WHERE name='$category'";
+$sqlSelectCategory = "SELECT category_id FROM categories_posts WHERE category_name='$category'";
 $categoriesFromDB = mysqli_fetch_assoc(mysqli_query($conn, $sqlSelectCategory));
 $idCategory = $categoriesFromDB['idCategory'];
 
 
-$sqlAddPost = "INSERT INTO Post 
-(PostName , description, dateCreate, idCategory, idUser) 
+$sqlAddPost = "INSERT INTO posts 
+(post_name , post_description, post_create_date, post_category_id, post_user_id) 
 VALUES('$namePost','$descriptionPost', '$dateCreate', '$idCategory','$authtor')";
 
 if (mysqli_query($conn, $sqlAddPost)) {

@@ -51,22 +51,22 @@
             <action>
                 <div class="post-content">
                     <div class="post-header">
-                        <a class="post-a" href="">> <?= $post["name"] ?></a>
+                        <a class="post-a" href="">> <?= $post["category_name"] ?></a>
                         <h2>
                             <a href="">
-                                <?= $post["PostName"] ?>
+                                <?= $post["post_name"] ?>
                             </a>
                         </h2>
                     </div>
                     <div class="post-main-content">
                         <p>
-                            <?= $post["description"] ?>
+                            <?= $post["post_description"] ?>
                         </p>
                     </div>
                     <hr>
                     <div class="post-footer">
                         <p>
-                            <?= $post["dateCreate"] ?>
+                            <?= $post["post_create_date"] ?>
                         </p>
                         <p>Автор поста: 
                             <a href="">

@@ -1,12 +1,12 @@
 <?php
 require_once('conection.php');
 
-$sqlPosts = "SELECT Post.PostName, Post.description , Post.dateCreate, CategoryPost.name, User.login
-FROM Post 
-INNER JOIN User 
-ON User.id = Post.idUser
-INNER JOIN CategoryPost 
-ON CategoryPost.idCategory = Post.idCategory";
+$sqlPosts = "SELECT DISTINCT p.post_name, p.post_description , p.post_create_date, c.category_name, u.login
+FROM posts AS p
+INNER JOIN users AS u 
+ON u.user_id = p.post_user_id
+INNER JOIN categories_posts AS c 
+ON c.category_id = p.post_category_id";
 
 
 $posts = mysqli_query($conn, $sqlPosts);

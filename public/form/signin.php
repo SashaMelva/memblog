@@ -5,7 +5,7 @@ require_once('../../src/conection.php');
 $login = trim($_POST['login']);
 $password = $_POST['password'];
 
-$sqlSelectCountUser = "SELECT * From User WHERE login = '$login'";
+$sqlSelectCountUser = "SELECT * From users WHERE login = '$login'";
 $chekUser = mysqli_query($conn, $sqlSelectCountUser);
 
 

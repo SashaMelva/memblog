@@ -4,13 +4,13 @@ require_once("../../src/conection.php");
 
 $search = trim($_GET['search']);
 
-$sqlSearchData = "SELECT Post.PostName, Post.description , Post.dateCreate, CategoryPost.name, User.login
-FROM Post
-INNER JOIN User 
-ON User.id = Post.idUser
-INNER JOIN CategoryPost 
-ON CategoryPost.idCategory = Post.idCategory
-WHERE PostName LIKE '%$search%'";
+$sqlSearchData = "SELECT DISTINCT p.post_name, p.post_description , p.post_create_date, c.category_name, u.login
+FROM posts AS p
+INNER JOIN users AS u 
+ON u.user_id = p.post_user_id
+INNER JOIN categories_posts AS c 
+ON c.category_id = p.post_category_id
+WHERE post_name LIKE '%$search%'";
 
 $posts = mysqli_query($conn, $sqlSearchData);
 $countPost = mysqli_num_rows($posts);

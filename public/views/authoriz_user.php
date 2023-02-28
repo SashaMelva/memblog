@@ -29,18 +29,6 @@ session_start();
             </nav>
         </div>
     </header>
-
-    <div class="div-message">
-        <?php
-        
-    //  require_once('include/firstData.php');
-        
-        //require_once('include/signup.php');
-
-       // echo ($_SESSION['login']);
-        ?>
-        <button onclick="closeWinMessage()" class="btn-message-code">Закрыть</button>
-    </div>
     <main class="main-content">
         <section class="conteiner header-main-conteiner">
             <div class="header-main">

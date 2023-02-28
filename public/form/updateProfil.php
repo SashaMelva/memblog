@@ -10,9 +10,9 @@ $formPassword = $_POST['password'];
 $idUser = $_SESSION['userId'];
 
 
-$sqlOldPassword = "SELECT password From User WHERE id='$idUser' AND password='$formPassword' LIMIT 1";
-$sqlDuplicationLogin = "SELECT * FROM User WHERE login='$newLogin' LIMIT 1";
-$sqlUpdateUser = "UPDATE User SET login='$newLogin', password='$newPassword' WHERE id='$idUser'";
+$sqlOldPassword = "SELECT password From users WHERE user_id='$idUser' AND password='$formPassword' LIMIT 1";
+$sqlDuplicationLogin = "SELECT * FROM users WHERE login='$newLogin' LIMIT 1";
+$sqlUpdateUser = "UPDATE users SET login='$newLogin', password='$newPassword' WHERE user_id='$idUser'";
 
 
 

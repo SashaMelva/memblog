@@ -4,8 +4,8 @@ require_once('../../src/conection.php');
 $login = trim($_POST['login']);
 $password = $_POST['password'];
 
-$sqlDuplicationLogin = "SELECT * FROM User WHERE login='$login'";
-$sqlAddUser = "INSERT INTO User (login, password) VALUES('$login','$password')";
+$sqlDuplicationLogin = "SELECT * FROM users WHERE login='$login'";
+$sqlAddUser = "INSERT INTO users (login, password) VALUES('$login','$password')";
 
 
 $countDuplicateLogin = mysqli_query($conn, $sqlDuplicationLogin);

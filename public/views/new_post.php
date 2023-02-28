@@ -50,8 +50,8 @@ require_once("../../src/generatorContent.php");
                     <label>Выберите категорию</label>
                     <select name="category" class="input-form">
                         <?php foreach ($categories as $category) :?>
-                            <option value=<?= $category["name"]?>>
-                                <?= $category["name"]?>
+                            <option value=<?= $category["category_name"]?>>
+                                <?= $category["category_name"]?>
                             </option>
                         <?php endforeach; ?>
                     </select>
