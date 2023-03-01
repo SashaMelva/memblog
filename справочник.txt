@@ -51,3 +51,10 @@ https://qna.habr.com/q/1100056
 
 
 show variables like'char%';
+
+
+
+ - './phpdocker/mysql/data/my.cnf:/etc/my.cnf.d/collation.conf'
+
+
+ - './phpdocker/mysql/conf:/etc/my.cnf.d/collation.conf'

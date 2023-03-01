@@ -1,18 +1,20 @@
-USE blog_db;
 
+DROP DATABASE blog_db;
+CREATE DATABASE blog_db CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE blog_db;
 CREATE TABLE users 
 (
     user_id INT PRIMARY KEY AUTO_INCREMENT, 
     login VARCHAR(20), 
     password VARCHAR(20)
-);
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci;;
 
 CREATE TABLE categories_posts 
 (
     category_id INT PRIMARY KEY AUTO_INCREMENT, 
     category_name VARCHAR(100), 
     category_description VARCHAR(255)
-);
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci;;
 
 CREATE TABLE posts 
 (
@@ -22,7 +24,7 @@ CREATE TABLE posts
     post_create_date DATETIME NOT NULL,
     post_category_id INT NOT NULL,
     post_user_id INT NOT NULL
-);
+) CHARACTER SET utf8 COLLATE utf8_unicode_ci;;
 ALTER TABLE posts ADD FOREIGN KEY (post_category_id) REFERENCES categories_posts (category_id);
 ALTER TABLE posts ADD FOREIGN KEY (post_user_id) REFERENCES users (user_id);
 

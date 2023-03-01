@@ -9,6 +9,7 @@ services:
         volumes:
             - '.:/memblog'
             - './phpdocker/mysql/data/:/docker-entrypoint-initdb.d'
+            - './phpdocker/mysql/conf:/etc/my.cnf.d'
         environment:
             - 'MYSQL_ROOT_PASSWORD=root'
             - 'MYSQL_DATABASE=blog_db'
@@ -17,8 +18,8 @@ services:
         ports:
             - '8082:3306'
         command:
-            - --character-set-server=utf8
-            - --collation-server=utf8_unicode_ci 
+            - --character-set-server=utf8mb4
+            - --collation-server=utf8mb4_unicode_ci 
     webserver:
         image: 'nginx:alpine'
         working_dir: /memblog
