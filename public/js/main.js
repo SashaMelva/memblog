@@ -113,7 +113,7 @@ function validationNewPost() {
         namePost.style.borderColor = 'var(--primary-focus)';
         return false;
     }
-    if (namePost.value > 255) {
+    if (namePost.value.length > 255) {
         namePost.style.borderColor = 'var(--primary-focus)';
         labelNamePost.style.color  = 'var(--primary-focus)';
         return false;

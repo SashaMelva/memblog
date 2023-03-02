@@ -1,4 +1,7 @@
 <?php
+if ($_SESSION['userLogin'] == null) {
+    header('Location: http://localhost:8080/views/authorization.php');
+}
     require_once("../../src/generatorContent.php");
 ?>
 <!DOCTYPE html>
@@ -29,7 +32,7 @@
             </nav>
         </div>
     </header>
-    <?php if ($_SESSION['message']) :?>
+    <?php if ($_SESSION['messagePost']) :?>
         <div class="div-message">
             <?php
                 echo ($_SESSION['messagePost']);

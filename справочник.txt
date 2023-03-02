@@ -59,3 +59,10 @@ show variables like'char%';
 
 
 default_charset = "UTF8MB4"
+
+
+
+if ($_SESSION['userLogin']) {
+    header('Location: http://localhost:8080/views/authoriz_user.php');
+} else {
+    session_destroy();

@@ -35,13 +35,13 @@
         </div>
     <?php endif; ?>
     <main class="main-content">
-    <section class="conteiner header-main-conteiner">
+        <section class="conteiner header-main-conteiner">
             <div class="header-main">
                 <button class="btn-burger" onclick="categoryPost()"><img src="/src/img/burger.png"></button>
             </div>
             <div class="category-post" style="display:none;">
                 <div>
-                    <form action="/form/searchData.php" method="GET">
+                    <form action="/form/searchDataAuthUser.php" method="GET">
                         <label for="search" class="text-input-form">Поиск постов по названию</label>
                         <input id="search" name="search" class="input-form input-search-post" type="test">
                     </form>
@@ -49,35 +49,35 @@
             </div>
         </section>
         <section class="conteiner">
-            <?php foreach ($posts as $post) : ?>
-                <action>
-                    <div class="post-content">
-                        <div class="post-header">
-                            <a class="post-a" href="">> Категория</a>
-                            <h2>
-                                <a href="">
-                                    <?= $post->name ?>Название поста
-                                </a>
-                            </h2>
-                        </div>
-                        <div class="post-main-content">
-                            <p>
-                                <?= $post->description  ?>Описание поста цфщжацкшаожщыукпаоптдыфукжуопщушпофщкаоуктщкфпжу
-                            </p>
-                        </div>
-                        <hr>
-                        <div class="post-footer">
-                            <p>
-                                <?= $post->dateCreate  ?>12-03-2023
-                            </p>
-                            <p>Автор поста: 
-                                <a href="">
-                                    <?= $post->idUser?>User
-                                </a> 
-                            </p>
-                        </div>
+            <?php foreach ($posts as $post) :?>
+            <action>
+                <div class="post-content">
+                    <div class="post-header">
+                        <a class="post-a" href="">> <?= $post["category_name"] ?></a>
+                        <h2>
+                            <a href="">
+                                <?= $post["post_name"] ?>
+                            </a>
+                        </h2>
                     </div>
-                </action>
+                    <div class="post-main-content">
+                        <p>
+                            <?= $post["post_description"] ?>
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="post-footer">
+                        <p>
+                            <?= $post["post_create_date"] ?>
+                        </p>
+                        <p>Автор поста: 
+                            <a href="">
+                                <?= $post["login"] ?>
+                            </a> 
+                        </p>
+                    </div>
+                </div>
+            </action>
             <?php endforeach; ?>
         </section>
     </main>

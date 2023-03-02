@@ -23,4 +23,5 @@ if (mysqli_num_rows($chekUser) == 1) {
     $_SESSION['message'] = 'Пользователя с таким логином не существует';
     header('Location: http://localhost:8080/views/authorization.php');
 }
+
 mysqli_close($conn);

@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php 
+session_start();
+if ($_SESSION['userLogin'] == null) {
+    header('Location: http://localhost:8080/views/authorization.php');
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en" class="page">

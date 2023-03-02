@@ -1,11 +1,5 @@
 <?php 
-
 session_start();
-if ($_SESSION['user']) {
-    header('Location: http://localhost:8080/views/authoriz_user.php');
-} else {
-    session_destroy();
-}
 
 ?>
 <!DOCTYPE html>
