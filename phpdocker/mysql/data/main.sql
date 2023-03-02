@@ -26,7 +26,11 @@ CREATE TABLE posts
 ALTER TABLE posts ADD FOREIGN KEY (post_category_id) REFERENCES categories_posts (category_id);
 ALTER TABLE posts ADD FOREIGN KEY (post_user_id) REFERENCES users (user_id);
 
-
+/*
+ALTER DATABASE blog_db CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+ALTER TABLE users CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+ALTER TABLE categories_posts CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+ALTER TABLE posts CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 INSERT INTO users (login, password) VALUES 
             ('user1', '123'), 
@@ -47,3 +51,4 @@ INSERT INTO posts (post_name , post_description, post_create_date, post_category
             ('Выбираем лучший профессиональный тональник', ' Какие про и, заодно, защиту от непогоды и злого ультрафиолета. ', '16.02.2023',4,1), 
             ('Йоханнес Бе все ближе к абсолюту на чемпионате мира', 'Выиграл уже пять гонок из', '07.01.2023', 3,3);
 
+*/

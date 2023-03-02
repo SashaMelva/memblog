@@ -51,3 +51,11 @@ https://qna.habr.com/q/1100056
 
 
 show variables like'char%';
+
+ - './phpdocker/mysql/mycustom.cnf:/etc/mysql/conf.d/my.cnf'
+
+- --default-character-set=UTF8MB4
+- --default-collation=UTF8MB4_unicode_ci
+
+
+default_charset = "UTF8MB4"
