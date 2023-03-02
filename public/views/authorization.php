@@ -15,19 +15,9 @@ session_start();
 </head>
 
 <body class="grid-main-content">
-    <header class="content-header">
-        <div class="conteiner conteiner-header">
-            <div>
-                <img class="img-logo" src="/src/img/blogging.png" alt="Логотип">
-            </div>
-            <nav class="nav navigation-header">
-                <ul class="navigation-core">
-                    <li><a id="authorization" class="a-header" href="/views/authorization.php">Авторизация</a></li>
-                    <li><a id="main" class="a-header" href="/index.php">Главная</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <?php
+        require_once("inc/header.php");
+    ?>
     <main>
         <section class="conteiner container-form ">
             <div class="display-form">
@@ -60,21 +50,8 @@ session_start();
             </div>
         </section>
     </main>
-    <footer class="content-footer">
-        <div class="conteiner container-footer">
-            <nav>
-                <ul class="navigation-core-header">
-                    <li><a class="a-footer" href="/views/authorization.php">Авторизация</a></li>
-                    <li><a class="a-footer" href="/index.php">Главная</a></li>
-                </ul>
-            </nav>
-
-            <div>
-                <p>Данный проект реализован не для продажи</p>
-                <p>Ссылка на GitHub разработчика: </p>
-            </div>
-        </div>
-    </footer>
-
+    <?php
+        require_once("inc/footer.php");
+    ?>
     <script src="/js/main.js"></script>
 </body>

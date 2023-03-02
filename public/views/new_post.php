@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_SESSION['userLogin'] == null) {
     header('Location: http://localhost:8080/views/authorization.php');
 }
@@ -17,21 +18,9 @@ if ($_SESSION['userLogin'] == null) {
 </head>
 
 <body class="grid-main-content">
-
-    <header class="content-header">
-        <div class="conteiner conteiner-header">
-            <div>
-                <img class="img-logo" src="/src/img/blogging.png" alt="Логотип">
-            </div>
-            <nav class="nav navigation-header">
-                <ul class="navigation-core">
-                    <li><a id="profil" class="a-header" href="profil.php">Профиль</a></li>
-                    <li><a id="new-post" class="a-header" href="new_post.php">Новый пост</a></li>
-                    <li><a id="main" class="a-header" href="authoriz_user.php">Главная</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <?php
+        require_once("inc/auth_haeder.php");
+    ?>
     <?php if ($_SESSION['messagePost']) :?>
         <div class="div-message">
             <?php
@@ -65,22 +54,9 @@ if ($_SESSION['userLogin'] == null) {
             </div>
         </section>
     </main>
-    <footer class="content-footer">
-        <div class="conteiner container-footer">
-            <nav>
-                <ul class="navigation-core-header">
-                <li><a id="profil" class="a-header" href="profil.php">Профиль</a></li>
-                    <li><a id="new-post" class="a-header" href="new_post.php">Новый пост</a></li>
-                    <li><a id="main" class="a-header" href="authoriz_user.php">Главная</a></li>
-                </ul>
-            </nav>
-
-            <div>
-                <p>Данный проект реализован не для продажи</p>
-                <p>Ссылка на GitHub репозитоий: </p>
-            </div>
-        </div>
-    </footer>
+    <?php
+        require_once("inc/auth_footer.php");
+    ?>
     <script src="/js/main.js"></script>
 </body>
 </html>
